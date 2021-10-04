@@ -4,7 +4,9 @@
     <title> 
       Projeto - Formulario de Cadastro
     </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" charset="utf-8"/>
     <link rel="stylesheet" href="./assets/style.css"/>
+    <link rel="stylesheet" href="./assets/form.css"/>
   </head>
 
   <body>
@@ -19,7 +21,40 @@
         Cadastrar
       </a>
     </div>
-    Cadastro
+    
+      <form  class="formulario">
+        <div class="linha-formulario">
+          <label class="label-grande" for="name">Nome:</label>
+          <input name="nome" id="name" required type="text"/>
+        
+        </div>
+        
+        <div class="linha-formulario">
+          <label class="label-grande" for="Telefone">Telefone:</label>
+          <input name="phone" id="phone" required type="text" />  
+        </div>
+        
+        <div class="linha-formulario xp" style="display: flex;">
+          <label class="label-grande">Experiência prévia:</label>
+          <div>
+            
+            <input type="radio" name="xp" id="xp-yes"  /> <label for="xp-yes">
+              Sim
+            </label>
+            <br/>
+            <input type="radio" name="xp" id="xp-no"  /> <label for="xp-no">
+              Não
+            </label>
+          </div>
+        
+        </div>
+          
+        <input type="submit" value="Salvar"/>
+
+      </form> 
+    
+  
+   
   </body>
   
 </html>
