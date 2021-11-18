@@ -31,12 +31,16 @@
         
         <div class="linha-formulario">
           <label class="label-grande" for="Telefone">Telefone:</label>
-          <input name="phone" id="phone" required type="text" />  
+          <input name="phone" id="phone" onkeypress="phoneFieldTest(event)" onfocus="this.value=''" required type="text">
+          <!-- onfocus="this.value =1''" limpa (substitui por string vazia) o campo ao ser clicado novamente (onfocus)-->
+          <!--<input name="phone" id="phone" onblur="phoneFieldTest(this.value)" required type="text">
+          
+          onblur checa logo que o usuario termina de digitar (sai do foco)-->
         </div>
         
-        <div class="linha-formulario xp" style="display: flex;">
+        <div class="linha-formulario" style="display: flex;">
           <label class="label-grande">Experiência prévia:</label>
-          <div>
+          <div class="xp-label">
             
             <input type="radio" name="xp" id="xp-yes" value="true" /> <label for="xp-yes">
               Sim

@@ -24,6 +24,11 @@
   width: 40%;
 }
 
+.formulario .xp-label{
+  display: block;
+  width: 30%;
+}
+
 @media screen and (max-width: 419px) {
   .formulario input[type="text"] {
     width: 100%;
