@@ -1,23 +1,10 @@
+var peopleRaw = localStorage.getItem('people');
 
-let people = [
-    {
-        name: 'Fernando Henrique Caversan Santos Duro',
-        tel: '149999999',
-        xp: true
-    },
-    //isto é um objeto
-    {
-        name: 'Anderson Arcenio Matos da Costa',
-        tel: '14999393',
-        xp: true
-    },
-    {
-        name: 'Joao Marcos',
-        tel: '140004043',
-        xp: false
-    },
-];
-//isto é um array de objetos
+if(peopleRaw != null){
+    var people = JSON.parse(peopleRaw);
+}else{
+    var people = [];
+}
     
 function drawTable(){
     
@@ -40,10 +27,18 @@ function drawTable(){
                         ${ (people[person].xp ? '<strong style="color:green">Sim</strong>' : '<strong style="color:red">Não</strong>')}
                     </td>
                     <td>
-                        <button onclick="people.splice(${person}, 1); drawTable();"> Excluir </button>
+                        <button onclick="deleteUser(${person})"> Excluir </button>
                     </td>
                 </tr>`; 
+
     };
 };
+
+
+function deleteUser(p){
+    people.splice(p, 1); 
+    drawTable();
+    localStorage.setItem('people', JSON.stringify(people))
+}
 
 drawTable();
