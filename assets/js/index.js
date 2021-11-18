@@ -27,12 +27,14 @@ function drawTable(){
                         ${ (people[person].xp ? '<strong style="color:green">Sim</strong>' : '<strong style="color:red">Não</strong>')}
                     </td>
                     <td>
-                        <button onclick="deleteUser(${person})"> Excluir </button>
+                        <button onclick='deleteUser(${person})'> Excluir </button>
+                        <a href="../projeto-exemplo/assets/src/form.html?person=${person}"> Editar </a>
                     </td>
                 </tr>`; 
 
     };
 };
+
 
 
 function deleteUser(p){
